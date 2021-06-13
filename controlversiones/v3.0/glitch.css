@@ -1,0 +1,68 @@
+.TextGlitch {
+  position: relative;
+  color: #fff;
+  font-size: 5.5rem;
+  font-family: var(--font);
+  font-weight: 800;
+}
+.TextGlitch::after {
+  display: none;
+  content: "";
+  position: absolute;
+  left: 100%;
+  bottom: 0;
+  width: 0.7ch;
+  height: 1em;
+  margin-left: 0.35ch;
+  border-radius: 2px;
+  background-color: currentColor;
+  animation: cursorAnim 1s ease infinite;
+}
+@keyframes cursorAnim {
+  0% {
+    opacity: 0.5;
+ }
+  45% {
+    opacity: 0.5;
+ }
+  55% {
+    opacity: 0;
+ }
+  100% {
+    opacity: 0;
+ }
+}
+.TextGlitch-clip {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+}
+.TextGlitch-clip + .TextGlitch-clip {
+  position: absolute;
+  top: 0;
+}
+.TextGlitch:not( .TextGlitch-blended) .TextGlitch-clip + .TextGlitch-clip {
+  display: none;
+}
+.TextGlitch-word {
+  margin: 0;
+  white-space: nowrap;
+}
+.TextGlitch-blend {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: 0.1s;
+  transition-property: opacity;
+}
+.TextGlitch-blendA {
+  color: rgb(0, 217, 255);
+  margin: -0.03em 0 0 0.03em;
+}
+.TextGlitch-blendB {
+  color: rgba(255, 10, 10, 0.616);
+  margin: 0.03em 0 0 -0.03em;
+}
+.TextGlitch-blended .TextGlitch-blend {
+  opacity: 0.4;
+}

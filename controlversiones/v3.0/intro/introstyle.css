@@ -1,0 +1,97 @@
+body{
+    background-color: black;
+    color: gold;
+}
+
+.homepage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 89vh;
+    overflow: hidden;
+}
+
+.home-name, .home-info, .home-button, .parteDos{
+    font-family: 'Poppins', sans-serif;
+}
+
+.home-name{
+    font-size: 6rem;
+
+}
+
+.ddd{
+    
+    position: relative; 
+   top: -3px; 
+   left: -3px; 
+   text-shadow: 1px 1px #c5a802, 
+                2px 2px #c5a802, 
+                3px 3px #c5a802, 
+                4px 4px #c5a802, 
+                5px 5px #c5a802, 
+                6px 6px #c5a802;
+}
+
+:root{
+    --duration: 5s;
+    --text-color: rgba(195, 182, 4, 0.589);
+    /* --text-color: rgba(255, 255, 255, 0.3); */
+    --bgr-color: #333;
+}
+
+html {
+	/* background-color: var(--bgr-color); */
+	text-align: center
+}
+
+body {
+	padding-top: 3em;
+}
+
+.shine, .chrome {
+	font-size: 3em;
+	margin: 0 auto;
+	margin-bottom: 1em;
+	font-weight: bold;
+}
+
+.shine {
+	background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+	-webkit-background-size: 150px;
+	color: var(--text-color);
+	-webkit-background-clip: text;
+	-webkit-animation-name: shine;
+	-webkit-animation-duration: var(--duration);
+	-webkit-animation-iteration-count: infinite;
+	text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+}
+
+.chrome {
+	background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+	background-image: -webkit-linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
+	-webkit-background-size: 200px;
+	color: var(--text-color);
+	-webkit-background-clip: text;
+	-webkit-animation-name: shine;
+	-webkit-animation-duration: var(--duration);
+	-webkit-animation-iteration-count: infinite;
+	text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+}
+
+@-webkit-keyframes shine {
+	0%, 10% {
+		background-position: -1000px;
+	}
+	20% {
+		background-position: top left;
+	}
+	90% {
+		background-position: top right;
+	}
+	100% {
+		background-position: 1000px;
+	}
+}

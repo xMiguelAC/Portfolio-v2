@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    
+
+    <main>
+        <nav class="menu">
+          <div class="menu__item">
+            <a class="menu__item-link">Showreel</a>
+            <img class="menu__item-img" src="./img/Web 1920 – 1.png" alt="Some image"/>
+            <div class="marquee">
+              <div class="marquee__inner" aria-hidden="true">
+                <span>Showreel</span>
+                <span>Showreel</span>
+                <span>Showreel</span>
+                <span>Showreel</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu__item">
+            <a class="menu__item-link">Case Studies</a>
+            <img class="menu__item-img" src="./img/WebPageV1.png" alt="Some image"/>
+            <div class="marquee">
+              <div class="marquee__inner" aria-hidden="true">
+                <span>Case Studies</span>
+                <span>Case Studies</span>
+                <span>Case Studies</span>
+                <span>Case Studies</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu__item">
+            <a class="menu__item-link">Experiments</a>
+            <img class="menu__item-img" src="img/3.jpg" alt="Some image"/>
+            <div class="marquee">
+              <div class="marquee__inner" aria-hidden="true">
+                <span>Experiments</span>
+                <span>Experiments</span>
+                <span>Experiments</span>
+                <span>Experiments</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu__item">
+            <a class="menu__item-link">Our Crew</a>
+            <img class="menu__item-img" src="img/4.jpg" alt="Some image"/>
+            <div class="marquee">
+              <div class="marquee__inner" aria-hidden="true">
+                <span>The Crew</span>
+                <span>The Crew</span>
+                <span>The Crew</span>
+                <span>The Crew</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu__item">
+            <a class="menu__item-link">Contact</a>
+            <img class="menu__item-img" src="img/5.jpg" alt="Some image"/>
+            <div class="marquee">
+              <div class="marquee__inner" aria-hidden="true">
+                <span>Contact</span>
+                <span>Contact</span>
+                <span>Contact</span>
+                <span>Contact</span>
+              </div>
+            </div>
+          </div>
+        </nav>
+        
+        </main>
+
+
+<style>
+  .container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.scrolling {
+  animation: marquee 2s linear infinite;
+  display: inline-block;
+  padding-right: 10px;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to { 
+    transform: translateX(-100%);
+  }
+}
+</style>
+        <div class="container">
+          <div class="scrolling">
+            Marquee rocks! 1
+          </div><div class="scrolling" aria-hidden="true">
+            Marquee rocks! 2
+          </div><div class="scrolling" aria-hidden="true">
+            Marquee rocks! 3
+          </div><div class="scrolling" aria-hidden="true">
+            Marquee rocks! 4
+          </div>
+          <!-- … -->
+        </div>
+
+
+</body>
+</html>

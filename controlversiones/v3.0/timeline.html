@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="timeline.css">
+</head>
+<body>
+    
+    <!-- <div id="timeline-content">
+        <h1>Timeline</h1>
+      
+        <ul class="timeline">
+          <li class="event" data-date="65Million B.C.">
+            <h3>Dinosaurs Roamed the Earth</h3>
+            <p>RAWWWWWWRRR 🐢🦂</p>
+          </li>
+          <li class="event" data-date="2005">
+            <h3>Creative Component Launched</h3>
+            <p>"We can be all things to all people!" 📣</p>    
+          </li>
+          <li class="event" id="date" data-date="2009">
+            <h3>Squareflair was Born</h3>
+            <p></p> <p>"We can be all things to Squarespace users!" 📣</p>    
+          </li>
+          
+          <li class="event" data-date="November 15, 2018">
+            
+            <h3>Squareflair Today</h3>
+            
+            <p>"We design and build from scratch!" 📣<p/> <p>When we say <em><strong>100% custom</strong></em> we mean it— and we build all sites on the Squarespace Developer platform.<p/>
+      <p>Did you know that all of our pixels are hand-forged from the rarest of subpixels grown and harvested in the <em>Nerd Forest</em>? <br>🤜💥🤛</p>
+            
+            <p><strong>Our success can be measured by lives and brands enhanced by 9+ years of 100% Squarespace-focused service!</strong></p>
+            
+          </li>
+        </ul>
+      </div> -->
+
+      <style>*,
+        *::after,
+        *::before {
+          box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
+        }
+        
+      
+        main::before {
+          animation: grain 8s steps(10) infinite;
+          background-image: url(../img/noise.png);
+          content: '';
+          height: 300%;
+          left: -50%;
+          opacity: 0.6;
+          position: fixed;
+          top: -100%;
+          /* width: 300%; */
+        }
+        
+        @keyframes grain {
+          0%, 100% { transform:translate(0, 0); }
+          10% { transform:translate(-5%, -10%); }
+          20% { transform:translate(-15%, 5%); }
+          30% { transform:translate(7%, -25%); }
+          40% { transform:translate(-5%, 25%); }
+          50% { transform:translate(-15%, 10%); }
+          60% { transform:translate(15%, 0%); }
+          70% { transform:translate(0%, 15%); }
+          80% { transform:translate(3%, 35%); }
+          90% { transform:translate(-10%, 10%); }
+        }
+        
+        a {
+          text-decoration: none;
+          color: var(--color-link);
+          outline: none;
+        }
+        
+        a:hover,
+        a:focus {
+          color: var(--color-link-hover);
+          outline: none;
+        }
+                
+        .menu {
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          padding: 10vh 0 25vh;
+          --marquee-width: 100vw;
+          --offset: 20vw;
+          --move-initial: calc(-25% + var(--offset));
+          --move-final: calc(-50% + var(--offset));
+          --item-font-size: 10vw;
+          counter-reset: menu;
+        }
+        
+        .menu__item {
+          cursor: default;
+          position: relative;
+          padding: 0 5vw;
+        }
+        
+        .menu__item-link {
+          display: inline-block;
+          cursor: pointer;
+          position: relative;
+          -webkit-text-stroke: 1.5px #000;
+          text-stroke: 1.5px #000;
+          -webkit-text-fill-color: transparent;
+          text-fill-color: transparent;
+          color: transparent;
+          transition: opacity 0.4s;
+        }
+        
+        .menu__item-link::before {
+          all: initial;
+          font-family: sofia-pro, sans-serif;
+          counter-increment: menu;
+          content:  counter(menu);
+          position: absolute;
+          bottom: 60%;
+          left: 0;
+          pointer-events: none;
+        }
+        
+        .menu__item-link:hover {
+          transition-duration: 0.1s;
+          opacity: 0;
+        }
+        
+        .menu__item-img {
+          pointer-events: none;
+          position: absolute;
+          height: 50vh;
+          max-height: 400px;
+          opacity: 0;
+          left: 100%;
+          top: 50%;
+          transform: translate3d(calc(-100% - 6vw),-30%,0) translate3d(0,20px,0);
+        }
+        
+        .menu__item-link:hover + .menu__item-img {
+          opacity: 1;
+          transform: translate3d(calc(-100% - 6vw),-30%,0) rotate3d(0,0,1,4deg);
+          transition: all 0.4s;
+        }
+        
+        /* Make sure 3 items are visible in the viewport by setting suitable font size. */
+        
+        .marquee {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: var(--marquee-width);
+          overflow: hidden;
+          pointer-events: none;
+          mix-blend-mode: color-burn;
+        }
+        
+        .marquee__inner {
+          width: fit-content;
+          display: flex;
+          position: relative;
+          transform: translate3d(var(--move-initial), 0, 0);
+          animation: marquee 5s linear infinite;
+          animation-play-state: paused;
+          opacity: 0;
+          transition: opacity 0.1s;
+        }
+        
+        .menu__item-link:hover ~ .marquee .marquee__inner {
+          animation-play-state: running;
+          opacity: 1;
+          transition-duration: 0.4s;
+        }
+        
+        .marquee span {
+          text-align: center;
+        }
+        
+        .menu__item-link,
+        .marquee span {
+          white-space: nowrap;
+          font-size: var(--item-font-size);
+          padding: 0 1vw;
+          font-weight: 900;
+          line-height: 1.15;
+        }
+        
+        .marquee span {
+          font-style: italic;
+        }
+        
+        @keyframes marquee {
+          0% {
+            transform: translate3d(var(--move-initial), 0, 0);
+          }
+        
+          100% {
+            transform: translate3d(var(--move-final), 0, 0);
+          }
+        }
+        
+        @media screen and (min-width: 53em) {
+          .frame {
+            text-align: left;
+            display: grid;
+            align-content: space-between;
+            width: 100%;
+            padding: 2.5rem 6vw;
+            pointer-events: none;
+            grid-template-columns: 75% 25%;
+            grid-template-rows: auto;
+          }
+        
+          .frame__title-wrap {
+            display: flex;
+            align-items: start;
+          }
+        
+          .frame__info {
+            margin: 0;
+          }
+        
+          .frame__title {
+            margin: 0 1rem 0 0;
+          }
+        
+          .frame__links {
+            padding: 0;
+            justify-self: end;
+          }
+        
+          .frame a {
+            pointer-events: auto;
+          }
+        }</style>
+
+<main>
+
+
+<nav class="menu">
+  <div class="menu__item">
+    <a class="menu__item-link">Showreel</a>
+    <img class="menu__item-img" src="./img/og.jpg" alt="Some image"/>
+    <div class="marquee">
+      <div class="marquee__inner" aria-hidden="true">
+        <span>Showreel</span>
+        <span>Showreel</span>
+        <span>Showreel</span>
+        <span>Showreel</span>
+      </div>
+    </div>
+  </div>
+  <div class="menu__item">
+    <a class="menu__item-link">Case Studies</a>
+    <img class="menu__item-img" src="./img/WebPageV1.png" alt="Some image"/>
+    <div class="marquee">
+      <div class="marquee__inner" aria-hidden="true">
+        <span>Case Studies</span>
+        <span>Case Studies</span>
+        <span>Case Studies</span>
+        <span>Case Studies</span>
+      </div>
+    </div>
+  </div>
+  <div class="menu__item">
+    <a class="menu__item-link">Experiments</a>
+    <img class="menu__item-img" src="img/3.jpg" alt="Some image"/>
+    <div class="marquee">
+      <div class="marquee__inner" aria-hidden="true">
+        <span>Experiments</span>
+        <span>Experiments</span>
+        <span>Experiments</span>
+        <span>Experiments</span>
+      </div>
+    </div>
+  </div>
+  <div class="menu__item">
+    <a class="menu__item-link">Our Crew</a>
+    <img class="menu__item-img" src="img/4.jpg" alt="Some image"/>
+    <div class="marquee">
+      <div class="marquee__inner" aria-hidden="true">
+        <span>The Crew</span>
+        <span>The Crew</span>
+        <span>The Crew</span>
+        <span>The Crew</span>
+      </div>
+    </div>
+  </div>
+  <div class="menu__item">
+    <a class="menu__item-link">Contact</a>
+    <img class="menu__item-img" src="img/5.jpg" alt="Some image"/>
+    <div class="marquee">
+      <div class="marquee__inner" aria-hidden="true">
+        <span>Contact</span>
+        <span>Contact</span>
+        <span>Contact</span>
+        <span>Contact</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+</main>
+
+</body>
+</html>

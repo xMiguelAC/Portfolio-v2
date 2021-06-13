@@ -1,0 +1,120 @@
+@media screen and (max-width: 10000px){
+    .sidenav-menu{
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 770px){
+    .timeline {
+        max-width: 30% !important;
+    }
+    .menu__item{
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 680px){
+    .about-cv{
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        position: static !important;
+        text-align: center !important;
+        width: 100%;
+    }
+
+    .about-cv img{
+        visibility: hidden;
+        display: none !important;
+    }
+
+    .about-cv span{
+        margin-top: 25px;
+        color: var(--yellow);
+        display: block;
+        background-color: var(--darkblack);
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-bottom: -50px !important;
+    }
+
+    .about-bar{
+        width: 95% !important;
+    }
+}
+
+@media screen and (max-width: 605px){
+    .home-name{
+        font-size: 4rem !important;
+    }
+
+    .home-info{
+        font-size: 1rem;
+    }
+
+    .socialmedia{
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 580px){
+    .nav-links, .socialmedia{
+        display: none;
+        visibility: hidden;
+    }
+
+    .sidenav-menu{
+        display: inline;
+        visibility: visible;
+    }
+    
+    .about-info{
+        width: 90% !important;
+        float: left !important;
+    }
+
+    .about-title{
+        width: 100% !important;
+        margin-top: 7%;
+        margin-bottom: 10%;
+        color: none !important;
+    }
+
+    .about-title h1{
+        top: 0px !important;
+        padding-bottom: 20px;
+        font-size: 5rem !important;
+        transform: none !important;
+        margin-left: 5%;
+    }
+
+
+    .timeline{
+        margin-left: 30% !important;
+    }
+    .timeline .event:before {
+        left: -150px !important;
+        transform: rotate(-90deg);
+    }
+
+    .timeline h3{
+        font-size: 1.0em !important;
+    }
+
+    .menu{
+        /* padding-bottom: 75px !important; */
+    }
+
+    .menu__item{
+        /* margin-bottom: 75px !important; */
+    }
+}
+
+@media screen and (max-width: 440px){
+    .home-name{
+        font-size: 2.3rem !important;
+        margin-top: 35%;
+    }
+}

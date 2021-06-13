@@ -1,0 +1,164 @@
+.about{
+    background: var(--black);
+    display: flex;
+    flex-direction: row;
+    margin-bottom: -30px;
+    padding-bottom: 35px;
+}
+
+.about-section{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+.about-title{
+    width: 16%;
+    display: inline-block;
+}
+
+.about-title h1{
+    transform: rotate(-90deg);
+    color: var(--black);
+    font-size: 8rem;
+    text-shadow: -1px 1px 0 #fff,
+                    1px 1px 0 #fff,
+                    1px -1px 0 #fff,
+                    -1px -1px 0 #fff;
+
+    position: relative;
+    top: 330px;
+}
+
+.about-info{
+    width: 80%;
+    margin-left: 5%;
+    position: relative;
+    top: -65px;
+    float: right;
+    /* margin-top: -50px; */
+    /* margin-left: 15%; */
+}
+.about-text{
+    text-align: justify;
+    color: var(--darkgray);
+}
+
+.about-text span{
+    color: #fff;
+}
+
+
+.about-bar{
+    width: 65%;
+}
+
+.about-bar ul li{
+    list-style: none;
+}
+
+.about-bar ul li .base{
+    background: #fff;
+    border-radius: 10px;
+    width: 100%;
+    /* width: 650px; */
+    height: 20px;
+}
+
+.about-bar ul li .base div{
+    border-radius: 10px;
+    height: 20px;
+}
+
+.barra1{
+    background: var(--blue);
+    width: 75%;
+}
+
+.barra2{
+    background: rgb(0, 183, 255);
+    width: 90%;
+}
+
+.barra3{
+    background: var(--blue);
+    width: 80%;
+}
+
+.barra4{
+    background: var(--yellow);
+    width: 85%;
+}
+
+
+.about-tools{
+    background-color: var(--darkblack);
+    font-family: 'Poppins', sans-serif;
+    color: var(--yellow);
+    border-radius: 10px;
+    padding: 15px 20px;
+    display: inline;
+    position: absolute;
+    right: 10px;
+}
+
+.about-image{
+    mix-blend-mode: hard-light;
+    opacity: 0.09;
+
+    /* opacity: 0.05; */
+    position: absolute;
+    right: 0;
+    /* height: 767px; */
+    height: auto;
+    /* width: calc(400*1.9px); */
+    width: 755px;
+    background: #000;
+}
+
+.about-cv{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 60px;
+    bottom: -35px;
+}
+
+.about-cv img{
+    height: auto;
+    width: 100px;
+    display: block;
+}
+
+.about-cv span{
+    position: relative;
+    text-align: center;
+    padding: 2%;
+}
+
+
+
+
+
+
+
+
+.home-image2{
+    mix-blend-mode: hard-light;
+    position: absolute;
+    right: 0px;
+    /* height: 800px; */
+    height: 755px;
+    opacity: 0.09;
+    overflow: hidden;
+}
+
+
+.velde{
+    background-color: chartreuse;
+}
+
+.cyan{
+    background-color: cyan;
+}
